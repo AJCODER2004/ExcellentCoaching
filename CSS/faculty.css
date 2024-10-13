@@ -1,0 +1,63 @@
+body {
+    background-color: #f4f7fa; /* Background color */
+    font-family: 'Roboto', sans-serif;
+}
+
+.navbar {
+    background-color: rgb(22, 58, 98); /* Navbar background color */
+}
+
+.nav-link {
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+    color: white; /* Change to your desired hover color */
+}
+
+.nav-link::after {
+    content: '';
+    display: block;
+    height: 2px;
+    background: white; /* Underline color */
+    transition: width 0.3s ease, left 0.3s ease;
+    width: 0;
+    position: absolute;
+    left: 50%;
+    bottom: -5px; /* Adjust position as needed */
+    opacity: 0.7; /* Underline transparency */
+}
+
+.nav-link:hover::after {
+    width: 100%;
+    left: 0;
+}
+
+.header-title {
+    text-align: center;
+    margin: 50px 0;
+    font-size: 3em; /* Main heading size */
+    color: #007bff; /* Main heading color */
+}
+
+.header-subtitle {
+    text-align: center;
+    font-size: 1.5em; /* Subtitle size */
+    color: #343a40; /* Subtitle color */
+}
+
+.card {
+    transition: transform 0.3s, box-shadow 0.3s; /* Added box shadow transition */
+}
+
+.card:hover {
+    transform: scale(1.05); /* Scale up on hover */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); /* Shadow effect */
+}
+
+/* Ensure proper image scaling within the card */
+.card-img-top {
+    height: 200px; /* Set a fixed height for images */
+    object-fit: cover; /* Cover the area */
+}

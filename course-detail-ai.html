@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Course Details - Artificial Intelligence</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            background-color: #f4f7fa;
+            font-family: 'Roboto', sans-serif;
+        }
+
+        .navbar {
+            background-color: rgb(22, 58, 98);
+        }
+
+        .header-title {
+            text-align: center;
+            margin: 50px 0;
+            font-size: 2.5em;
+            color: #007bff;
+        }
+
+        .course-banner {
+            height: 350px;
+            background: url('IMAGES/ai-banner.jpg') center center no-repeat;
+            background-size: cover;
+            position: relative;
+        }
+
+        .course-banner h1 {
+            color: white;
+            text-align: center;
+            padding-top: 150px;
+            font-size: 3em;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+
+        .section {
+            margin-top: 50px;
+        }
+
+        .section-title {
+            font-size: 1.8em;
+            color: #007bff;
+            margin-bottom: 30px;
+        }
+
+        .curriculum-item {
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+
+        .testimonial {
+            background-color: #f8f9fa;
+            padding: 20px;
+            border-left: 5px solid #007bff;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+
+        .instructor-info {
+            display: flex;
+            align-items: center;
+            margin-top: 20px;
+        }
+
+        .instructor-img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-right: 20px;
+        }
+
+        .enroll-btn {
+            text-align: center;
+            margin-top: 40px;
+        }
+
+        .btn-enroll {
+            background-color: #007bff;
+            color: white;
+            padding: 15px 30px;
+            font-size: 1.2em;
+        }
+
+        .btn-enroll:hover {
+            background-color: #0056b3;
+        }
+
+        .price {
+            font-size: 2em;
+            color: #007bff;
+        }
+
+        /* Reviews Section */
+        .reviews {
+            margin-top: 50px;
+        }
+
+        .review-item {
+            padding: 15px;
+            border-bottom: 1px solid #ddd;
+            margin-bottom: 10px;
+        }
+
+        .review-author {
+            font-weight: bold;
+            color: #007bff;
+        }
+
+        .review-date {
+            color: #999;
+            font-size: 0.9em;
+        }
+
+        .review-text {
+            margin-top: 10px;
+            font-size: 1.1em;
+        }
+
+        /* Modal Styling */
+        .modal-header {
+            background-color: #007bff;
+            color: white;
+        }
+
+        /* Unique Features */
+        .unique-features {
+            background-color: #e9f7ff;
+            padding: 30px;
+            border-radius: 5px;
+            margin-top: 40px;
+        }
+
+        .unique-features-item {
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+
+        .unique-features h5 {
+            color: #007bff;
+        }
+    </style>
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#">Excellent Coaching</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="auth.html"> Login/Sign up</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="course.html">Courses</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="faculty.html">Faculty</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="successstories.html">Success Stories</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="contactus.html">Contact Us</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!-- Course Banner -->
+<div class="course-banner">
+    <h1>Artificial Intelligence</h1>
+</div>
+
+<!-- Enrollment Details Section (New Section Added) -->
+<div class="container section">
+    <div class="row">
+        <div class="col-md-8">
+            <h2 class="section-title">Course Overview</h2>
+            <p>This course provides an in-depth understanding of artificial intelligence (AI) and its applications. It covers key concepts in machine learning, neural networks, deep learning, and natural language processing (NLP).</p>
+        </div>
+        <div class="col-md-4 text-center">
+            <h3 class="price">$199</h3> <!-- Price -->
+            <a href="enroll.html" class="btn btn-enroll mt-3">Enroll Now</a> <!-- Enroll Button -->
+            <ul class="list-unstyled mt-4">
+                <li>Lifetime Access</li>
+                <li>24/7 Support</li>
+                <li>Certificate of Completion</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<!-- Course Objectives Section -->
+<div class="container section">
+    <h2 class="section-title">Course Objectives</h2>
+    <ul>
+        <li>Understand the fundamentals of artificial intelligence and machine learning</li>
+        <li>Learn to build and train neural networks</li>
+        <li>Explore deep learning models and techniques</li>
+        <li>Implement AI-based solutions to real-world problems</li>
+        <li>Understand natural language processing (NLP) and its applications</li>
+    </ul>
+</div>
+
+<!-- Detailed Curriculum Section -->
+<div class="container section">
+    <h2 class="section-title">Detailed Curriculum</h2>
+    <div class="curriculum-item">
+        <h5>Module 1: Introduction to AI</h5>
+        <p>An overview of AI concepts, history, and modern applications.</p>
+    </div>
+    <div class="curriculum-item">
+        <h5>Module 2: Machine Learning Basics</h5>
+        <p>Learn about supervised and unsupervised learning, regression, and classification models.</p>
+    </div>
+    <div class="curriculum-item">
+        <h5>Module 3: Neural Networks</h5>
+        <p>Understand how neural networks function, and how to build and train them using TensorFlow.</p>
+    </div>
+    <div class="curriculum-item">
+        <h5>Module 4: Deep Learning</h5>
+        <p>Dive into deep learning models, including convolutional neural networks (CNNs) and recurrent neural networks (RNNs).</p>
+    </div>
+    <div class="curriculum-item">
+        <h5>Module 5: Natural Language Processing</h5>
+        <p>Explore NLP techniques, including sentiment analysis, language translation, and chatbots.</p>
+    </div>
+</div>
+
+<!-- Instructor Information Section -->
+<div class="container section">
+    <h2 class="section-title">Instructor Information</h2>
+    <div class="instructor-info">
+        <img src="IMAGES/instructor.jpg" alt="Instructor" class="instructor-img">
+        <div>
+            <h5>John Doe</h5>
+            <p>John is an AI expert with 10+ years of experience in the field. He has worked on various AI projects, from building intelligent systems to creating AI-driven products for Fortune 500 companies. John is passionate about teaching and helping students understand complex AI concepts.</p>
+        </div>
+    </div>
+</div>
+
+<!-- Reviews Section -->
+<div class="container section reviews">
+    <h2 class="section-title">Student Reviews</h2>
+
+<!-- Review Items -->
+<div class="review-item">
+    <p class="review-author">Jane Smith</p>
+    <p class="review-date">Reviewed on October 10, 2024</p>
+    <p class="review-text">This AI course was amazing! The instructor explained complex topics in a simple and engaging way. Highly recommended for both beginners and experienced learners.</p>
+</div>
+    
+
+    <div class="review-item">
+        <p class="review-author">Michael Johnson</p>
+        <p class="review-date">Reviewed on September 28, 2024</p>
+        <p class="review-text">The hands-on exercises helped me apply the concepts in real projects. The course structure was well-organized, and the support team was always there to help.</p>
+    </div>
+
+    <div class="review-item">
+        <p class="review-author">Emma Lee</p>
+        <p class="review-date">Reviewed on August 15, 2024</p>
+        <p class="review-text">The course gave me a strong foundation in AI and deep learning. I now feel confident to build my own AI models. The pace was perfect, and the additional resources were extremely helpful.</p>
+    </div>
+</div>
+
+<!-- Unique Features Section -->
+<div class="container section unique-features">
+    <h2 class="section-title">Why Choose This Course?</h2>
+    <div class="row">
+        <div class="col-md-4 unique-features-item">
+            <h5>Expert Instructors</h5>
+            <p>Learn from AI professionals with real-world experience and a passion for teaching.</p>
+        </div>
+        <div class="col-md-4 unique-features-item">
+            <h5>Comprehensive Curriculum</h5>
+            <p>Gain a thorough understanding of AI from basic principles to advanced applications.</p>
+        </div>
+        <div class="col-md-4 unique-features-item">
+            <h5>Hands-on Projects</h5>
+            <p>Apply your knowledge by working on projects that simulate real-world challenges.</p>
+        </div>
+    </div>
+</div>
+
+<!-- Footer -->
+<footer class="text-center p-4" style="background-color: #007bff; color: white; margin-top: 50px;">
+    <p>© 2024 Excellent Coaching. All rights reserved.</p>
+</footer>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
