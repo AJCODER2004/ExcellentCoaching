@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Data</title>
+    <!-- Include jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- Include DataTables CSS -->
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.5/css/jquery.dataTables.min.css">
+    <!-- Include DataTables JS -->
+    <script src="https://cdn.datatables.net/1.13.5/js/jquery.dataTables.min.js"></script>
+    <!-- Include Buttons extension CSS -->
+    <link rel="stylesheet" href="https://cdn.datatables.net/buttons/2.3.6/css/buttons.dataTables.min.css">
+    <!-- Include Buttons extension JS -->
+    <script src="https://cdn.datatables.net/buttons/2.3.6/js/dataTables.buttons.min.js"></script>
+    <!-- Include JSZip for Excel export -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+    <!-- Include PDFMake for PDF export -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/pdfmake.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/vfs_fonts.js"></script>
+    <!-- Include Buttons for Excel and Print -->
+    <script src="https://cdn.datatables.net/buttons/2.3.6/js/buttons.html5.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/2.3.6/js/buttons.print.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>User Data</h1>
+        <table id="userTable" class="display">
+            <thead>
+                <tr>
+                    <th>Username</th>
+                    <th>Email</th>
+                    <th>Password</th> <!-- Be cautious with displaying passwords -->
+                </tr>
+            </thead>
+            <tbody>
+                <!-- User data will be inserted here -->
+            </tbody>
+        </table>
+    </div>
+
+    <script>
+        $(document).ready(function () {
+            // Retrieve user data from localStorage
+            let users = JSON.parse(localStorage.getItem('users')) || [];
+
+            // Initialize an empty array to hold the data for DataTable
+            let userData = [];
+
+            // Loop through the users array and push the data to userData
+            users.forEach(function(user) {
+                userData.push([user.username, user.email, user.password]); // Note: It's not safe to display passwords
+            });
+
+            // Initialize the DataTable with export buttons
+            $('#userTable').DataTable({
+                data: userData,
+                columns: [
+                    { title: "Username" },
+                    { title: "Email" },
+                    { title: "Password" } // This should be omitted in a real application for security reasons
+                ],
+                dom: 'Bfrtip', // Define the placement of the buttons and table
+                buttons: [
+                    {
+                        extend: 'copyHtml5',
+                        text: 'Copy',
+                        titleAttr: 'Copy to clipboard'
+                    },
+                    {
+                        extend: 'excelHtml5',
+                        text: 'Export to Excel',
+                        title: 'User Data',
+                        filename: 'user_data'
+                    },
+                    {
+                        extend: 'csvHtml5',
+                        text: 'Export to CSV',
+                        title: 'User Data',
+                        filename: 'user_data'
+                    },
+                    {
+                        extend: 'pdfHtml5',
+                        text: 'Export to PDF',
+                        title: 'User Data',
+                        filename: 'user_data'
+                    },
+                    {
+                        extend: 'print',
+                        text: 'Print',
+                        title: 'User Data'
+                    }
+                ]
+            });
+        });
+    </script>
+</body>
+</html>
