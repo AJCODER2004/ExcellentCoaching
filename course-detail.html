@@ -199,7 +199,7 @@
             <div class="col-md-4 text-center">
                 <h3 class="price" id="course-price"></h3>
                 <p>Duration: <span id="course-duration"></span></p>
-                <a href="enroll.html" class="btn btn-primary mt-3">Enroll Now</a>
+                <a href="#" id="enroll-btn" class="btn btn-primary mt-3" onclick="enrollCourse()">Enroll Now</a>
             </div>
         </div>
     </div>
@@ -219,14 +219,16 @@
         <h2 class="section-title">Reviews</h2>
         <div id="reviews-list"></div>
     </div>
-<script src="JS/session.js"></script>
+    <script src="JS/session.js"></script>
     <script>
-        
+        var myCourseCode = "";
+
         // Function to get the course based on the title from query parameters
         function getCourseFromURL() {
             const queryString = window.location.search;
             const urlParams = new URLSearchParams(queryString);
             const courseCode = urlParams.get('courseCode');
+            myCourseCode = courseCode;
 
             return courses.find(course => course.courseCode === courseCode);
         }
@@ -234,6 +236,8 @@
         // Function to populate course details on the page
         function displayCourseDetails(course) {
             if (course) {
+                isCourseEnrolled(myCourseCode);
+
                 // Set course title and banner image
                 document.getElementById('course-title').textContent = course.title;
                 document.getElementById('course-banner').style.backgroundImage = `url(${course.imageUrl})`;
@@ -283,6 +287,39 @@
                     reviewsList.appendChild(reviewDiv);
                 });
             }
+        }
+
+        // Function to check if a course is already enrolled
+        function isCourseEnrolled(courseCode) {
+            const enrolledCourses = JSON.parse(sessionStorage.getItem('enrolledCourses')) || [];
+            const chkStatus = enrolledCourses.includes(courseCode);
+            console.log(chkStatus);
+
+            const enrollBtn = document.getElementById("enroll-btn");
+
+            if (chkStatus) {
+                // Change button text and class if already enrolled
+                enrollBtn.innerHTML = "You already Enrolled this Course";
+                enrollBtn.classList.remove('btn-primary');
+                enrollBtn.classList.add('btn-success');
+            } else {
+                // Keep the default button text and class
+                enrollBtn.innerHTML = "Enroll Now";
+                enrollBtn.classList.remove('btn-success');
+                enrollBtn.classList.add('btn-primary');
+            }
+        }
+
+
+        // Function to save the enrolled course
+        function enrollCourse() {
+            console.log("df");
+            let enrolledCourses = JSON.parse(sessionStorage.getItem('enrolledCourses')) || [];
+            if (!enrolledCourses.includes(myCourseCode)) {
+                enrolledCourses.push(myCourseCode);
+                sessionStorage.setItem('enrolledCourses', JSON.stringify(enrolledCourses));
+            }
+            isCourseEnrolled(myCourseCode);
         }
 
         // Get the course from the URL and display details

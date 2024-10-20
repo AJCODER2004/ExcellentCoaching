@@ -33,7 +33,9 @@ form.addEventListener('submit', function (event) {
 	if (userFound) {
 		// alert("Login successful");
 		showModal("Success", "Login successful");
+		const email = userFound.email;
 		sessionStorage.setItem("username", username); // Store username in sessionStorage
+		sessionStorage.setItem("email", email); // Store username in sessionStorage
 		window.location.href = "/index.html"; // Redirect to index.html
 	} else {
 		// alert("Invalid Username or Password");
