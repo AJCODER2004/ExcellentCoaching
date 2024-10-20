@@ -9,6 +9,7 @@
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="CSS/navbar.css">
     <style>
         body {
             background-color: #f4f7fa;
@@ -102,40 +103,80 @@
 
 <body>
 
-<!-- Modal -->
-<div class="modal fade" id="myModal" tabindex="-1" aria-labelledby="modalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="modalLabel">Warning</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-                Are You Sure Want To Sign Out?
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">No</button>
-                <a href="#" onclick="signOut()" type="button" class="btn btn-danger">Yes</a>
+    <!-- Modal -->
+    <div class="modal fade" id="myModal" tabindex="-1" aria-labelledby="modalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalLabel">Warning</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    Are You Sure Want To Sign Out?
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">No</button>
+                    <a href="#" onclick="signOut()" type="button" class="btn btn-danger">Yes</a>
+                </div>
             </div>
         </div>
     </div>
-</div>
 
+    <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
         <div class="container-fluid">
-            <a class="navbar-brand" href="#">Excellent Coaching</a>
+            <!-- Logo and brand text -->
+            <a class="navbar-brand d-flex align-items-center" href="#">
+                <img src="IMAGES/logo.png" class="logo me-2" alt="Logo">
+                <span>Excellent Coaching</span>
+            </a>
+            <!-- Toggler for mobile view -->
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
+            <!-- Collapsible content -->
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="course.html">Courses</a></li>
-                    <li class="nav-item"><a class="nav-link" href="faculty.html">Faculty</a></li>
-                    <li class="nav-item"><a class="nav-link" href="successstories.html">Success Stories</a></li>
-                    <li class="nav-item"><a class="nav-link" href="contactus.html">Contact Us</a></li>
-                    <li class="nav-item"><a class="nav-link" href="auth.html">Login/Sign up</a></li>
+
+                    <li class="nav-item">
+                        <a class="nav-link nav-link1" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link nav-link1" href="course.html">Courses</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link nav-link1" href="faculty.html">Faculty</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link nav-link1" href="successstories.html">Success Stories</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link nav-link1" href="contactus.html">Contact Us</a>
+                    </li>
+                    <li class="nav-item ">
+                        <a class="nav-link " id="sign-up" href="auth.html">Login/Sign up</a>
+                    </li>
+                    <!-- <li class="nav-item ">
+                        <a class="nav-link " id="sign-out" href="#" onclick="signOut( )">Sign Out</a>
+                    </li> -->
+                    <div class="profile" style="display: flex;" id="sign-out">
+                        <div class="user">
+                            <!-- <p>Katherine Cooper</p> -->
+                        </div>
+                        <div class="img-box">
+                            <img src="https://i.postimg.cc/BvNYhMHS/user-img.jpg" alt="some user image">
+                        </div>
+                        <!-- Profile dropdown -->
+                        <div class="profile-dropdown">
+                            <p class="mt-2" id="loggedInUserName" style="text-align: center;"></p>
+                            <hr>
+                            <a href="/profile.html">My Profile</a>
+                            <a href="/myCourses.html">My Courses</a>
+                            <a href="#" data-bs-toggle="modal" data-bs-target="#myModal">Logout</a>
+                        </div>
+                    </div>
+
                 </ul>
             </div>
         </div>
@@ -178,92 +219,16 @@
         <h2 class="section-title">Reviews</h2>
         <div id="reviews-list"></div>
     </div>
-
+<script src="JS/session.js"></script>
     <script>
-        const courses = [
-            {
-                title: "Commerce",
-                category: "Commerce",
-                price: 300,
-                description: "Learn about business and accounting with our comprehensive courses.",
-                objectives: [
-                    "Understand business fundamentals",
-                    "Learn accounting principles",
-                    "Gain insight into financial management"
-                ],
-                curriculum: [
-                    { title: "Introduction to Commerce", description: "Overview of commerce and business concepts." },
-                    { title: "Financial Accounting", description: "Basics of accounting and financial management." }
-                ],
-                instructor: {
-                    name: "John Doe",
-                    bio: "Expert in business and finance with over 10 years of experience.",
-                    imageUrl: "IMAGES/instructor.jpg"
-                },
-                reviews: [
-                    { author: "Jane Smith", date: "October 10, 2024", text: "This commerce course was informative and engaging." }
-                ],
-                duration: "4 weeks"
-            },
-            {
-                title: "Mathematics",
-                category: "Mathematics",
-                price: 250,
-                description: "Master mathematical concepts, from algebra to calculus.",
-                objectives: [
-                    "Understand basic mathematical principles",
-                    "Master advanced calculus"
-                ],
-                curriculum: [
-                    { title: "Algebra Basics", description: "Learn algebraic principles and equations." },
-                    { title: "Advanced Calculus", description: "Deep dive into advanced calculus techniques." }
-                ],
-                instructor: {
-                    name: "Jane Doe",
-                    bio: "Math expert with a PhD in applied mathematics and over 15 years of teaching experience.",
-                    imageUrl: "IMAGES/instructor.jpg"
-                },
-                reviews: [
-                    { author: "Michael Johnson", date: "September 28, 2024", text: "The course helped me understand complex math." }
-                ],
-                duration: "6 weeks"
-            },
-            {
-                title: "Artificial Intelligence",
-                category: "Technology",
-                price: 500,
-                description: "Dive into the world of AI and machine learning with our interactive courses.",
-                objectives: [
-                    "Understand the fundamentals of AI",
-                    "Learn to build and train neural networks",
-                    "Explore deep learning models"
-                ],
-                curriculum: [
-                    { title: "Introduction to AI", description: "Overview of AI concepts, history, and modern applications." },
-                    { title: "Machine Learning Basics", description: "Supervised and unsupervised learning, regression, and classification models." },
-                    { title: "Neural Networks", description: "How to build and train neural networks." },
-                    { title: "Deep Learning", description: "Dive into deep learning models, including CNNs and RNNs." },
-                    { title: "Natural Language Processing", description: "Explore NLP techniques, including sentiment analysis and chatbots." }
-                ],
-                instructor: {
-                    name: "John Doe",
-                    bio: "AI expert with over 10 years of experience. Passionate about teaching complex AI concepts.",
-                    imageUrl: "IMAGES/instructor.jpg"
-                },
-                reviews: [
-                    { author: "Emma Lee", date: "August 15, 2024", text: "The AI course gave me a strong foundation in AI and deep learning." }
-                ],
-                duration: "8 weeks"
-            }
-        ];
-
+        
         // Function to get the course based on the title from query parameters
         function getCourseFromURL() {
             const queryString = window.location.search;
             const urlParams = new URLSearchParams(queryString);
-            const courseTitle = urlParams.get('title');
+            const courseCode = urlParams.get('courseCode');
 
-            return courses.find(course => course.title === courseTitle);
+            return courses.find(course => course.courseCode === courseCode);
         }
 
         // Function to populate course details on the page
@@ -272,7 +237,7 @@
                 // Set course title and banner image
                 document.getElementById('course-title').textContent = course.title;
                 document.getElementById('course-banner').style.backgroundImage = `url(${course.imageUrl})`;
-                
+
                 // Set course description
                 document.getElementById('course-description').textContent = course.description;
 

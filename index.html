@@ -14,24 +14,24 @@
 </head>
 
 <body>
-<!-- Modal -->
-<div class="modal fade" id="myModal" tabindex="-1" aria-labelledby="modalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="modalLabel">Warning</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-                Are You Sure Want To Sign Out?
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">No</button>
-                <a href="#" onclick="signOut()" type="button" class="btn btn-danger">Yes</a>
+    <!-- Modal -->
+    <div class="modal fade" id="myModal" tabindex="-1" aria-labelledby="modalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalLabel">Warning</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    Are You Sure Want To Sign Out?
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">No</button>
+                    <a href="#" onclick="signOut()" type="button" class="btn btn-danger">Yes</a>
+                </div>
             </div>
         </div>
     </div>
-</div>
 
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
@@ -87,7 +87,7 @@
                             <a href="#" data-bs-toggle="modal" data-bs-target="#myModal">Logout</a>
                         </div>
                     </div>
-                    
+
                 </ul>
             </div>
         </div>
@@ -145,155 +145,136 @@
 
 
     <!-- Our Courses -->
-    <h1 class="header-title">Our Courses</h1>
+    <h1 class="header-title">Featured Courses</h1>
     <h2 class="header-subtitle">Explore our diverse range of courses</h2>
 
-    <div class="container mt-5">
-        <div class="row">
-            <div class="col-lg-4 col-md-6 mb-4">
-                <div class="card">
-                    <img src="IMAGES/course1.jpg" class="card-img-top" alt="Commerce Course">
-                    <div class="card-body">
-                        <h5 class="card-title">Commerce</h5>
-                        <p class="card-text">Learn about business, finance, and accounting with our comprehensive
-                            courses.</p>
-                        <a href="course-detail-commerce.html" class="btn btn-primary">Learn More</a>
-                    </div>
-                </div>
+    <!-- <div class="container">
+        <div class="card" style="--clr: #009688">
+            <div class="img-box">
+                <img src="IMAGES/course1.jpg">
             </div>
-            <div class="col-lg-4 col-md-6 mb-4">
-                <div class="card">
-                    <img src="IMAGES/course2.jpg" class="card-img-top" alt="Mathematics Course">
-                    <div class="card-body">
-                        <h5 class="card-title">Mathematics</h5>
-                        <p class="card-text">Master mathematical concepts, from algebra to calculus.</p>
-                        <a href="course-detail-math.html" class="btn btn-primary">Learn More</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 mb-4">
-                <div class="card">
-                    <img src="IMAGES/course3.jpg" class="card-img-top" alt="AI Course">
-                    <div class="card-body">
-                        <h5 class="card-title">Artificial Intelligence</h5>
-                        <p class="card-text">Dive into the world of AI and machine learning with our interactive
-                            courses.</p>
-                        <a href="course-detail-ai.html" class="btn btn-primary">Learn More</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 mb-4">
-                <div class="card">
-                    <img src="IMAGES/course4.jpg" class="card-img-top" alt="Science Course">
-                    <div class="card-body">
-                        <h5 class="card-title">Science</h5>
-                        <p class="card-text">Explore physics, chemistry, and biology through hands-on learning
-                            experiences.</p>
-                        <a href="science.html" class="btn btn-primary">Learn More</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 mb-4">
-                <div class="card">
-                    <img src="IMAGES/course5.jpg" class="card-img-top" alt="Arts Course">
-                    <div class="card-body">
-                        <h5 class="card-title">Arts</h5>
-                        <p class="card-text">Unlock your creativity with our courses in visual arts, music, and
-                            literature.</p>
-                        <a href="arts.html" class="btn btn-primary">Learn More</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 mb-4">
-                <div class="card">
-                    <img src="IMAGES/course6.jpg" class="card-img-top" alt="Technology Course">
-                    <div class="card-body">
-                        <h5 class="card-title">Technology</h5>
-                        <p class="card-text">Stay ahead with courses on programming, cybersecurity, and digital
-                            literacy.</p>
-                        <a href="technology.html" class="btn btn-primary">Learn More</a>
-                    </div>
-                </div>
+            <div class="content">
+                <h2>Commerce</h2>
+                <p>Learn about business and accounting with our comprehensive courses.
+                </p>
+                <a href="course-detail-commerce.html" target="_blank">Read More</a>
             </div>
         </div>
-    </div>
-
+        <div class="card" style="--clr: #FF3E7F">
+            <div class="img-box">
+                <img src="IMAGES/course2.jpg">
+            </div>
+            <div class="content">
+                <h2>Mathematics</h2>
+                <p>
+                    Master mathematical concepts, from algebra to calculus.
+                </p>
+                <a href="course-detail-math.html" target="_blank">Read More</a>
+            </div>
+        </div>
+        <div class="card" style="--clr: #03A9F4">
+            <div class="img-box">
+                <img src="IMAGES/course3.jpg">
+            </div>
+            <div class="content">
+                <h2>Artificial Intelligence</h2>
+                <p>
+                    Dive into the world of AI and machine learning with our interactive courses.
+                </p>
+                <a href="course-detail-ai.html" target="_blank">Read More</a>
+            </div>
+        </div>
+    </div> -->
+    <div class="container" id="coursesContainer"></div>
 
 
     <!-- Our Faculty -->
     <h1 class="header-title">Our Faculty</h1>
     <h2 class="header-subtitle">Meet our experienced instructors</h2>
 
-    <div class="container mt-5">
-        <div class="row">
-            <!-- Faculty Member 1 -->
-            <div class="col-lg-4 col-md-6 mb-4">
-                <div class="card">
-                    <img src="IMAGES/faculty1.jpg" class="card-img-top" alt="Faculty Member 1">
-                    <div class="card-body">
-                        <h5 class="card-title">Ms. Rebecca Foster</h5>
-                        <p class="card-text">PhD in Education with over 10 years of teaching experience in various
-                            subjects.</p>
-                    </div>
-                </div>
+
+    <div class="container">
+        <!-- faculty 1 -->
+        <div class="card" style="--clr: #009688">
+            <div class="img-box">
+                <img src="IMAGES/faculty1.jpg">
             </div>
-            <!-- Faculty Member 2 -->
-            <div class="col-lg-4 col-md-6 mb-4">
-                <div class="card">
-                    <img src="IMAGES/faculty2.jpg" class="card-img-top" alt="Faculty Member 2">
-                    <div class="card-body">
-                        <h5 class="card-title">Mr. John Doe</h5>
-                        <p class="card-text">Experienced in Mathematics and Science with a passion for teaching.</p>
-                    </div>
-                </div>
+            <div class="content">
+                <h2>Ms. Rebecca Foster</h2>
+                <p>PhD in Education with over 10 years of teaching experience in various
+                </p>
             </div>
-            <!-- Faculty Member 3 -->
-            <div class="col-lg-4 col-md-6 mb-4">
-                <div class="card">
-                    <img src="IMAGES/faculty3.jpg" class="card-img-top" alt="Faculty Member 3">
-                    <div class="card-body">
-                        <h5 class="card-title">Ms. Linda Johnson</h5>
-                        <p class="card-text">Expert in language arts with a focus on creative writing and literature.
-                        </p>
-                    </div>
-                </div>
+        </div>
+
+        <!-- faculty 2-->
+        <div class="card" style="--clr: #FF3E7F">
+            <div class="img-box">
+                <img src="IMAGES/faculty2.jpg">
             </div>
-            <!-- Faculty Member 4 -->
-            <div class="col-lg-4 col-md-6 mb-4">
-                <div class="card">
-                    <img src="IMAGES/faculty4.jpg" class="card-img-top" alt="Faculty Member 4">
-                    <div class="card-body">
-                        <h5 class="card-title">Dr. Alice Smith</h5>
-                        <p class="card-text">PhD in Education specializing in fostering student achievement and
-                            engagement.</p>
-                    </div>
-                </div>
+            <div class="content">
+                <h2>Mr. John Does</h2>
+                <p>
+                    Experienced in Mathematics and Science with a passion for teaching.
+                </p>
             </div>
-            <!-- Faculty Member 5 -->
-            <div class="col-lg-4 col-md-6 mb-4">
-                <div class="card">
-                    <img src="IMAGES/faculty5.jpg" class="card-img-top" alt="Faculty Member 5">
-                    <div class="card-body">
-                        <h5 class="card-title">Ms. Olivia Bennett</h5>
-                        <p class="card-text">With over 8 years of experience, Ms. Olivia excels at teaching English
-                            Literature.</p>
-                    </div>
-                </div>
+        </div>
+
+        <!-- faculty 3 -->
+        <div class="card" style="--clr: #03A9F4">
+            <div class="img-box">
+                <img src="IMAGES/faculty3.jpg">
             </div>
-            <!-- Faculty Member 6 -->
-            <div class="col-lg-4 col-md-6 mb-4">
-                <div class="card">
-                    <img src="IMAGES/faculty6.jpg" class="card-img-top" alt="Faculty Member 6">
-                    <div class="card-body">
-                        <h5 class="card-title">Mr. Kevin Brown</h5>
-                        <p class="card-text">Specializes in Physics with a focus on practical experiments and real-world
-                            applications.</p>
-                    </div>
-                </div>
+            <div class="content">
+                <h2>Ms. Linda Johnson</h2>
+                <p>
+                    Expert in language arts with a focus on creative writing and literature.
+                </p>
+            </div>
+        </div>
+
+        <!-- faculty 4 -->
+        <div class="card" style="--clr: #009688">
+            <div class="img-box">
+                <img src="IMAGES/faculty4.jpg">
+            </div>
+            <div class="content">
+                <h2>Dr. Alice Smith</h2>
+                <p>
+                    PhD in Education specializing in fostering student achievement and
+                    engagement.
+                </p>
+            </div>
+
+            <!-- faculty 5 -->
+        </div>
+        <div class="card" style="--clr: #FF3E7F">
+            <div class="img-box">
+                <img src="IMAGES/faculty5.jpg">
+            </div>
+            <div class="content">
+                <h2>Ms. Olivia Bennett</h2>
+                <p>
+                    With over 8 years of experience, Ms. Olivia excels at teaching English
+                    Literature.
+                </p>
+            </div>
+        </div>
+
+
+        <!-- faculty 6 -->
+        <div class="card" style="--clr: #03A9F4">
+            <div class="img-box">
+                <img src="IMAGES/faculty6.jpg">
+            </div>
+            <div class="content">
+                <h2>Mr. Kevin Brown</h2>
+                <p>
+                    Specializes in Physics with a focus on practical experiments and real-world applications.
+
+                </p>
             </div>
         </div>
     </div>
-
 
 
     <!-- Success Stories -->
@@ -376,9 +357,9 @@
     <h1 class="header-title">Contact Us</h1>
     <h2 class="header-subtitle">We'd love to hear from you!</h2>
 
-    <div class="container mt-5">
+    <div>
         <div class="contact-form">
-            <form>
+            <form style="margin-bottom: 40px;">
                 <div class="mb-3">
                     <label for="name" class="form-label">Full Name</label>
                     <input type="text" class="form-control" id="name" placeholder="John Doe" required>
@@ -403,58 +384,32 @@
 
 
 
-    <!-- Footer -->
-    <footer class="footer">
-
-        <div class="container">
-            <div class="row footer-container">
-                <div class="col-md-4 footer-section">
-                    <h4>Contact Us</h4>
-                    <p>Email: info@xcellentcoaching.com</p>
-                    <p>Phone: +1 234 567 8901</p>
-                    <p>Address: 123 Coaching Lane, City, Country</p>
-                </div>
-                <div class="col-md-4 footer-section">
-                    <h4>Follow Us</h4>
-                    <div class="social-icons d-flex flex-wrap">
-                        <a href="https://wa.me/12345678901" target="_blank" class="icon WhatsApp">
-                            <img src="IMAGES/whatsapp-icon.png" alt="WhatsApp" title="Whatsapp">
-                        </a>
-                        <a href="https://facebook.com" target="_blank" class="icon Facebook">
-                            <img src="IMAGES/facebook-icon.png" alt="Facebook " title="Facebook">
-                        </a>
-                        <a href="https://instagram.com" target="_blank" class="icon Instagram">
-                            <img src="IMAGES/instagram-icon.png" alt="Instagram" title="Instagram">
-                        </a>
-                        <a href="https://twitter.com" target="_blank" class="icon Twitter" title="Twitter">
-                            <img src="IMAGES/twitter-icon.png" alt="Twitter">
-                        </a>
-                        <a href="https://messenger.com" target="_blank" class="icon Messenger">
-                            <img src="IMAGES/facebook-messenger-icon.png" alt="Messenger" title="Meseenger">
-                        </a>
-                        <a href="https://youtube.com" target="_blank" class="icon Youtube">
-                            <img src="IMAGES/youtube-icon.png" alt="YouTube" title="Youtube">
-                        </a>
-
-                    </div>
-                </div>
-                <div class="col-md-4 footer-section">
-                    <h4>Quick Links</h4>
-                    <ul>
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="course.html">Courses</a></li>
-                        <li><a href="faculty.html">Faculty</a></li>
-                        <li><a href="successstories.html">Success Stories</a></li>
-                        <li><a href="contactus.html">Contact Us</a></li>
-                    </ul>
-                </div>
-            </div>
+    <footer>
+        <div class="waves">
+            <div class="wave" id="wave1"></div>
+            <div class="wave" id="wave2"></div>
+            <div class="wave" id="wave3"></div>
+            <div class="wave" id="wave4"></div>
         </div>
-        <div class="footer-bottom">
-            <p>&copy; 2024 Excellent Coaching. All Rights Reserved.</p>
-        </div>
+        <ul class="social_icon">
+            <li><a target="_blank" href="https://www.facebook.com"><ion-icon name="logo-facebook"></ion-icon></a></li>
+            <li><a target="_blank" href="https://www.twitter.com"><ion-icon name="logo-twitter"></ion-icon></a></li>
+            <li><a target="_blank" href="https://www.linkedin.com"><ion-icon name="logo-linkedin"></ion-icon></a></li>
+            <li><a target="_blank" href="https://www.instagram.com"><ion-icon name="logo-instagram"></ion-icon></a></li>
+        </ul>
+
+
+        <ul class="menu">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="course.html">About</a></li>
+            <li><a href="faculty.html">Faculty</a></li>
+            <li><a href="successstories.html">Sucess Stories</a></li>
+            <li><a href="contactus.html">Contact Us</a></li>
+        </ul>
+        <p>&copy2021 Prakash Sahu | All Rights Reserved</p>
     </footer>
-
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 
 
 
@@ -462,6 +417,31 @@
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
     <script src="JS/session.js"></script>
+    <script>
+        // Function to display top 6 courses
+        window.onload = function () {
+            const container = document.getElementById("coursesContainer");
+            const colors = ["#009688", "#FF3E7F", "#03A9F4", "#FF9800", "#9C27B0", "#00BCD4"];
+
+            courses.slice(0, 6).forEach((course, index) => {
+                const card = document.createElement("div");
+                card.classList.add("card");
+                card.style.setProperty("--clr", colors[index % colors.length]);
+
+                card.innerHTML = `
+                    <div class="img-box">
+                        <img src="${course.imageUrl}" alt="${course.title}">
+                    </div>
+                    <div class="content">
+                        <h2>${course.title}</h2>
+                        <p>${course.description}</p>
+                        <a href="./course-detail.html?courseCode=${course.courseCode}" target="_blank">Read More</a>
+                    </div>
+                `;
+                container.appendChild(card);
+            });
+        };
+    </script>
 </body>
 
 </html>
