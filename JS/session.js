@@ -6,6 +6,7 @@ window.onload = function () {
         console.log("Username found in session storage:", username);
         document.getElementById("sign-up").style.display="none";
         document.getElementById("sign-out").style.display="block";
+        document.getElementById("loggedInUserName").innerHTML=username;
         // Optionally, you can redirect or update the page content based on the presence of username
     } else {
         console.log("No username found in session storage");
@@ -18,3 +19,12 @@ function signOut() {
 sessionStorage.removeItem("username");
 window.location.href="/auth.html";
 }
+
+
+
+let profile = document.querySelector('.profile');
+
+profile.onclick = function () {
+    profile.classList.toggle('active');
+};
+

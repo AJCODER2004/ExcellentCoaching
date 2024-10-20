@@ -11,26 +11,8 @@
     <link rel="stylesheet" href="CSS/course.css">
     <link rel="stylesheet" href="CSS/navbar.css">
 </head>
-<body>    
 
-<!-- Modal -->
-<div class="modal fade" id="myModal" tabindex="-1" aria-labelledby="modalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="modalLabel">Warning</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-                Are You Sure Want To Sign Out?
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">No</button>
-                <a href="#" onclick="signOut()" type="button" class="btn btn-danger">Yes</a>
-            </div>
-        </div>
-    </div>
-</div>
+<body> <!-- Navbar -->
 
     <!-- Navbar -->
 
@@ -87,7 +69,7 @@
                             <a href="#" onclick="signOut( )">Logout</a>
                         </div>
                     </div>
-                    
+
                 </ul>
             </div>
         </div>
@@ -218,7 +200,26 @@
                 popularity: 90,
                 description: "Learn about business and accounting with our comprehensive courses.",
                 imageUrl: "IMAGES/course1.jpg",
-                link: "course-detail-commerce.html"
+                link: "course-detail.html",
+                objectives: [
+                    "Understand business fundamentals",
+                    "Learn accounting principles",
+                    "Gain insight into financial management"
+                ],
+                curriculum: [
+                    { title: "Introduction to Commerce", description: "Overview of commerce and business concepts." },
+                    { title: "Financial Accounting", description: "Basics of accounting and financial management." }
+                ],
+                instructor: {
+                    name: "John Doe",
+                    bio: "Expert in business and finance with over 10 years of experience.",
+                    imageUrl: "IMAGES/instructor.jpg"
+                },
+                reviews: [
+                    { author: "Jane Smith", date: "October 10, 2024", text: "This commerce course was informative and engaging." }
+                ],
+                price: 199,
+                duration: "4 weeks"
             },
             {
                 title: "Mathematics",
@@ -228,7 +229,25 @@
                 popularity: 80,
                 description: "Master mathematical concepts, from algebra to calculus.",
                 imageUrl: "IMAGES/course2.jpg",
-                link: "course-detail-math.html"
+                link: "course-detail.html",
+                objectives: [
+                    "Understand basic mathematical principles",
+                    "Master advanced calculus"
+                ],
+                curriculum: [
+                    { title: "Algebra Basics", description: "Learn algebraic principles and equations." },
+                    { title: "Advanced Calculus", description: "Deep dive into advanced calculus techniques." }
+                ],
+                instructor: {
+                    name: "Jane Doe",
+                    bio: "Math expert with a PhD in applied mathematics and over 15 years of teaching experience.",
+                    imageUrl: "IMAGES/instructor.jpg"
+                },
+                reviews: [
+                    { author: "Michael Johnson", date: "September 28, 2024", text: "The course helped me understand complex math." }
+                ],
+                price: 199,
+                duration: "6 weeks"
             },
             {
                 title: "Artificial Intelligence",
@@ -238,19 +257,32 @@
                 popularity: 95,
                 description: "Dive into the world of AI and machine learning with our interactive courses.",
                 imageUrl: "IMAGES/course3.jpg",
-                link: "course-detail-ai.html"
-            },
-            {
-                title: "Programming",
-                category: "Technology",
-                subCategory: "Programming",
-                price: 400,
-                popularity: 85,
-                description: "Learn programming languages and software development.",
-                imageUrl: "IMAGES/course2.jpg",
-                link: "course-detail-programming.html"
+                link: "course-detail.html",
+                objectives: [
+                    "Understand the fundamentals of AI",
+                    "Learn to build and train neural networks",
+                    "Explore deep learning models"
+                ],
+                curriculum: [
+                    { title: "Introduction to AI", description: "Overview of AI concepts, history, and modern applications." },
+                    { title: "Machine Learning Basics", description: "Supervised and unsupervised learning, regression, and classification models." },
+                    { title: "Neural Networks", description: "How to build and train neural networks." },
+                    { title: "Deep Learning", description: "Dive into deep learning models, including CNNs and RNNs." },
+                    { title: "Natural Language Processing", description: "Explore NLP techniques, including sentiment analysis and chatbots." }
+                ],
+                instructor: {
+                    name: "John Doe",
+                    bio: "AI expert with over 10 years of experience. Passionate about teaching complex AI concepts.",
+                    imageUrl: "IMAGES/instructor.jpg"
+                },
+                reviews: [
+                    { author: "Emma Lee", date: "August 15, 2024", text: "The AI course gave me a strong foundation in AI and deep learning." }
+                ],
+                price: 500,
+                duration: "8 weeks"
             }
         ];
+
 
         // Categories and Sub-categories Data
         const categories = [
@@ -281,18 +313,18 @@
         function renderCourses(coursesToDisplay) {
             coursesContainer.innerHTML = '';
             coursesToDisplay.forEach(course => {
-                coursesContainer.innerHTML += `
-                    <div class="col-lg-4 col-md-6 mb-4">
-                        <div class="card">
-                            <img src="${course.imageUrl}" class="card-img-top" alt="${course.title} Course">
-                            <div class="card-body">
-                                <h5 class="card-title">${course.title}</h5>
-                                <p class="card-text">${course.description}</p>
-                                <a href="${course.link}" class="btn btn-primary">Learn More</a>
-                            </div>
-                        </div>
-                    </div>
-                `;
+                    coursesContainer.innerHTML += `
+        <div class="col-lg-4 col-md-6 mb-4">
+            <div class="card" onclick='redirectToCourseDetail("${course.title}")'>
+                <img src="${course.imageUrl}" class="card-img-top" alt="${course.title} Course">
+                <div class="card-body">
+                    <h5 class="card-title">${course.title}</h5>
+                    <p class="card-text">${course.description}</p>
+                    <a href="javascript:void(0)" class="btn btn-primary">Learn More</a>
+                </div>
+            </div>
+        </div>
+    `;
             });
         }
 
@@ -327,7 +359,7 @@
             const searchText = searchInput.value.toLowerCase();
             if (searchText) {
                 filteredCourses = filteredCourses.filter(course =>
-                    course.title.toLowerCase().includes(searchText) || 
+                    course.title.toLowerCase().includes(searchText) ||
                     course.description.toLowerCase().includes(searchText)
                 );
             }
@@ -373,6 +405,11 @@
                 filterCourses();
             }
         });
+
+        function redirectToCourseDetail(title) {
+            window.location.href = `new-course-detail.html?title=${title}`;
+        }
+
 
         // Initial rendering
         renderFilters();  // Render dynamic filters

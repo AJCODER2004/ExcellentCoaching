@@ -44,7 +44,29 @@
 </head>
 <body>
 
+    
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" aria-labelledby="modalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="modalLabel">Warning</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                Are You Sure Want To Sign Out?
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">No</button>
+                <a href="#" onclick="signOut()" type="button" class="btn btn-danger">Yes</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+
     <!-- Navbar -->
+
     <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
         <div class="container-fluid">
             <!-- Logo and brand text -->
@@ -79,9 +101,26 @@
                     <li class="nav-item ">
                         <a class="nav-link " id="sign-up" href="auth.html">Login/Sign up</a>
                     </li>
-                    <li class="nav-item ">
+                    <!-- <li class="nav-item ">
                         <a class="nav-link " id="sign-out" href="#" onclick="signOut( )">Sign Out</a>
-                    </li>
+                    </li> -->
+                    <div class="profile" style="display: flex;" id="sign-out">
+                        <div class="user">
+                            <!-- <p>Katherine Cooper</p> -->
+                        </div>
+                        <div class="img-box">
+                            <img src="https://i.postimg.cc/BvNYhMHS/user-img.jpg" alt="some user image">
+                        </div>
+                        <!-- Profile dropdown -->
+                        <div class="profile-dropdown">
+                            <p class="mt-2" id="loggedInUserName" style="text-align: center;"></p>
+                            <hr>
+                            <a href="/profile.html">My Profile</a>
+                            <a href="/myCourses.html">My Courses</a>
+                            <a href="#" onclick="signOut( )">Logout</a>
+                        </div>
+                    </div>
+                    
                 </ul>
             </div>
         </div>
